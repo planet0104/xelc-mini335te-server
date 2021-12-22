@@ -1,0 +1,27 @@
+[package]
+name = "xelc-mini335te-server"
+version = "1.0.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1"
+log = "0.4.14"
+env_logger = "0.9.0"
+once_cell = "1.9.0"
+serde_json = "1.0.73"
+base64 = "0.20.0-alpha.1"
+crc16 = "0.4.0"
+serialport = "4.0.1"
+byteorder = "1.4.3"
+hex = "0.4.3"
+tide = "0.17.0-beta.1"
+serde = { version = "1.0", features = ["derive"] }
+async-std = "1.10.0"
+structopt = "0.3.25"
+
+[profile.release]
+lto = true
+panic = 'abort'
+opt-level = 's'
